@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catus ($Catus) | The Frontier-Class Meme Cat on Solana</title>
+<meta name="description" content="Catus is the frontier-class meme cat bringing chaotic vibes, legendary memes, and unstoppable degen energy to crypto! $Catus on Solana.">
+<meta name="theme-color" content="#f7efdc">
+<!-- OG: replace https://catus.example with your real domain before launch (social crawlers need absolute URLs) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Catus ($Catus) | Frontier-Class Meme Cat on Solana">
+<meta property="og:description" content="Chaotic vibes, legendary memes, unstoppable degen energy. Zero thoughts behind the stare.">
+<meta property="og:url" content="https://catus.example/">
+<meta property="og:image" content="https://catus.example/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Catus">
+<meta name="twitter:image" content="https://catus.example/assets/img/og.jpg">
+<link rel="icon" type="image/webp" href="assets/img/catus-sm.webp">
+<link rel="preload" href="assets/fonts/fredoka.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/marker.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/img/room.webp" as="image" fetchpriority="high" media="(min-width:701px)">
+<link rel="preload" href="assets/img/catus.webp" as="image">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+<!-- Hand-drawn "boiling line" filters: 3 noise seeds stepped at ~8fps -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="boil1"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="1"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+  <filter id="boil2"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+  <filter id="boil3"><feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="13"/><feDisplacementMap in="SourceGraphic" scale="4"/></filter>
+  <filter id="boilBig"><feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="3"><animate attributeName="seed" values="3;9;15" dur=".375s" calcMode="discrete" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" scale="5"/></filter>
+</svg>
+
+<!-- PRELOADER: cat doodle draws itself -->
+<div id="loader" aria-hidden="true">
+  <svg class="loader-cat" viewBox="0 0 220 160" fill="none" stroke="#141414" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path class="draw" d="M40 130 C20 110 22 70 50 52 L56 22 L80 42 C100 36 120 36 140 40 L162 18 L170 50 C200 70 205 105 180 122 C150 140 80 145 40 130 Z"/>
+    <path class="draw" d="M40 120 C28 122 18 118 12 108"/>
+    <circle class="draw" cx="100" cy="88" r="15"/><circle class="draw" cx="182" cy="80" r="12"/>
+    <path class="draw" d="M125 96 L165 92"/>
+  </svg>
+  <div class="loader-count"><span id="loadNum">000</span><small>loading zero thoughts</small></div>
+</div>
+
+<div id="cursor" aria-hidden="true"><span class="cursor-ring"></span><span class="cursor-label"></span></div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- NAV -->
+<header id="nav" class="nav">
+  <a href="#top" class="nav-logo" data-cursor="home"><img src="assets/img/catus-sm.webp" alt="Catus logo" width="54" height="38"><span>$Catus</span></a>
+  <nav class="nav-links hidden md:flex" aria-label="Main">
+    <a href="#about">Lore</a><a href="#zoomies">Zoomies</a><a href="#tokenomics">Tokenomics</a><a href="#how">How to Buy</a><a href="#chart">Chart</a>
+  </nav>
+  <div class="nav-cta">
+    <button class="btn btn-sm btn-paper hidden sm:inline-flex" data-copy-ca data-cursor="copy">Copy CA</button>
+    <a class="btn btn-sm btn-coral" data-link="buy" href="#" target="_blank" rel="noopener" data-cursor="buy">Buy Now</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-room" aria-hidden="true">
+    <picture><source media="(max-width:700px)" srcset="assets/img/room-sm.webp"><img src="assets/img/room.webp" alt="" fetchpriority="high" width="1726" height="816"></picture>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="tag sticker-tag"><svg viewBox="0 0 24 24" class="ico"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6L3.4 9.3l6-.7z"/></svg> Solana meme cat</p>
+      <h1 class="hero-title" aria-label="Catus"><span class="split" data-split>CATUS</span></h1>
+      <p class="hero-line">Catus is the <mark class="hl hl-yellow">frontier-class</mark> meme cat bringing <mark class="hl hl-coral">chaotic vibes</mark>, <mark class="hl hl-green">legendary memes</mark>, and unstoppable <mark class="hl hl-blue">degen energy</mark> to crypto!</p>
+      <div class="hero-btns">
+        <a class="btn btn-coral btn-lg" data-link="buy" href="#" target="_blank" rel="noopener" data-cursor="buy">Buy Now</a>
+        <a class="btn btn-yellow" data-link="chart" href="#" target="_blank" rel="noopener" data-cursor="chart">Chart</a>
+        <a class="btn btn-paper btn-icon" data-link="x" href="#" target="_blank" rel="noopener" aria-label="Catus on X" data-cursor="follow">
+          <!-- SWAP: replace this SVG with <img src="assets/img/x.png" alt="X"> once x.png is supplied -->
+          <svg viewBox="0 0 24 24" class="ico-x" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.8 3h6.4l4.4 5.9L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.5l11.2 14.5z"/></svg>
+        </a>
+      </div>
+      <div class="ca-box sk" >
+        <span class="ca-label">CA</span>
+        <code class="ca-text" data-ca>TBA</code>
+        <button class="btn btn-sm btn-blue" data-copy-ca data-cursor="copy">Copy</button>
+      </div>
+      <p class="anti-scam">Only trust the CA posted here and on <a data-link="x" href="#" target="_blank" rel="noopener">@Catus</a>. Catus never DMs first.</p>
+    </div>
+    <div class="hero-stage">
+      <div class="cat-wrap" id="heroCat">
+        <img src="assets/img/catus.webp" alt="Catus, a blue-grey cartoon cat with googly side eyes and a flat stare" width="900" height="633" class="cat-img">
+        <span class="googly g1" aria-hidden="true"><i></i></span>
+        <span class="googly g2" aria-hidden="true"><i></i></span>
+      </div>
+      <!-- doodle annotations -->
+      <div class="note n1" aria-hidden="true"><span>frontier-class</span><svg viewBox="0 0 120 70"><path d="M8 10 C40 6 80 20 104 56 M104 56 L90 50 M104 56 L102 40"/></svg></div>
+      <div class="note n2" aria-hidden="true"><span>zero thoughts</span><svg viewBox="0 0 120 70"><path d="M110 12 C80 4 40 18 18 54 M18 54 L34 50 M18 54 L18 38"/></svg></div>
+      <div class="note n3" aria-hidden="true"><svg viewBox="0 0 120 70"><path d="M60 64 C64 40 50 24 30 8 M30 8 L44 10 M30 8 L32 22"/></svg><span>degen energy</span></div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><svg viewBox="0 0 40 60"><path d="M20 6 C14 22 26 34 20 50 M20 50 L10 40 M20 50 L30 40"/></svg>scroll for chaos</div>
+</section>
+
+<!-- RIBBON -->
+<div class="ribbon" aria-hidden="true">
+  <div class="ribbon-track">
+    <span>chaotic vibes</span><b></b><span>legendary memes</span><b></b><span>degen energy</span><b></b><span>zero thoughts</span><b></b><span>frontier-class</span><b></b><span>$Catus on Solana</span><b></b>
+    <span>chaotic vibes</span><b></b><span>legendary memes</span><b></b><span>degen energy</span><b></b><span>zero thoughts</span><b></b><span>frontier-class</span><b></b><span>$Catus on Solana</span><b></b>
+  </div>
+</div>
+
+<!-- ABOUT / BENTO -->
+<section id="about" class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="outline-word" aria-hidden="true">STARE</span>
+      <h2 class="sec-title words">Meet the cat behind the blank stare</h2>
+    </div>
+    <div class="bento">
+      <article class="card sk c-blue big reveal">
+        <div class="bubble sk">...</div>
+        <h3>Frontier-class. Allegedly.</h3>
+        <p>Nobody knows what Catus is thinking. Scientists checked. The answer is nothing, at frontier-class speed. One eye watches the chart, the other watches you. The mouth stays flat no matter what the candles do.</p>
+        <img class="break-out" src="assets/img/pose-sit.webp" alt="Catus sitting smugly with paws together" loading="lazy" width="653" height="749">
+      </article>
+      <article class="card sk c-coral reveal">
+        <svg class="doodle-ico" viewBox="0 0 64 64"><path d="M10 40 L22 18 L32 34 L42 12 L54 40" /><path d="M8 52 H56"/></svg>
+        <h3>Chaotic vibes</h3>
+        <p>3am zoomies through your portfolio. Knocks things off tables, including your expectations.</p>
+      </article>
+      <article class="card sk c-yellow reveal">
+        <svg class="doodle-ico" viewBox="0 0 64 64"><rect x="10" y="12" width="44" height="34" rx="6"/><path d="M18 24h14M18 32h22M26 46l-6 10M40 46l6 10"/></svg>
+        <h3>Legendary memes</h3>
+        <p>A face built for reaction images. One stare fits every situation, every chain, every dip.</p>
+      </article>
+      <article class="card sk c-green reveal">
+        <svg class="doodle-ico" viewBox="0 0 64 64"><path d="M36 6 L14 36 H30 L26 58 L50 26 H34 Z"/></svg>
+        <h3>Degen energy</h3>
+        <p>Unstoppable. Unbothered. Runs on vibes, SOL and the occasional snack.</p>
+      </article>
+      <article class="card sk c-blue reveal quote">
+        <div class="bubble sk">gm.</div>
+        <p class="quote-txt">"I have no thoughts and I must hold."</p>
+        <p class="quote-by">Catus, probably</p>
+      </article>
+      <article class="card sk c-paper wide reveal">
+        <img class="lay" src="assets/img/pose-back-sm.webp" alt="Catus lying on its back with legs in the air" loading="lazy" width="360" height="221">
+        <div><h3>The blank stare protocol</h3><p>Step 1: look at the market. Step 2: feel nothing. Step 3: hold. Catus has been running this strategy since before it had thoughts. It still does not have thoughts.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNATURE: ZOOMIES -->
+<section id="zoomies" class="zoomies" aria-label="Catus zoomies scene">
+  <div class="z-stage">
+    <div class="z-head">
+      <h2 class="sec-title">3AM ZOOMIES</h2>
+      <div class="meter sk" role="img" aria-label="Chaos meter">
+        <span class="meter-label">CHAOS METER</span>
+        <div class="meter-bar"><div class="meter-fill" id="meterFill"></div></div>
+        <span class="meter-num" id="meterNum">0%</span>
+      </div>
+    </div>
+    <div class="z-captions" aria-live="off">
+      <p class="z-cap is-on">The room is calm. The cat is loading.</p>
+      <p class="z-cap">Zoomies detected. Frame first.</p>
+      <p class="z-cap">Lamp down. Plant down. Mug... gone.</p>
+      <p class="z-cap">Chaos maxed. Zero regrets. Zero thoughts.</p>
+    </div>
+    <div class="z-room">
+      <svg class="z-wall" viewBox="0 0 1200 500" preserveAspectRatio="none" aria-hidden="true"><path d="M0 400 C300 396 900 404 1200 398" /></svg>
+      <svg class="z-window" viewBox="0 0 200 150" aria-hidden="true"><rect x="6" y="6" width="188" height="138" rx="6" fill="#cfe3f1"/><path d="M100 6 V144 M6 75 H194"/><circle cx="150" cy="40" r="16" fill="#f6c45a"/><path d="M20 120 C40 96 60 96 80 120" fill="#8cc17a"/></svg>
+      <svg class="z-rug" viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="300" cy="30" rx="290" ry="24" fill="#b9d3f0"/><ellipse cx="300" cy="30" rx="240" ry="16" fill="none" stroke-dasharray="10 12"/></svg>
+      <!-- objects -->
+      <svg class="obj o-frame" data-x="0.18" viewBox="0 0 120 100" aria-hidden="true"><rect x="8" y="8" width="104" height="84" rx="4" fill="#f6c45a"/><rect x="22" y="22" width="76" height="56" fill="#cfe3f1"/><circle cx="72" cy="40" r="10" fill="#ef8c6b"/><path d="M22 78 L48 50 L66 66 L80 56 L98 78Z" fill="#8cc17a"/></svg>
+      <svg class="obj o-lamp" data-x="0.36" viewBox="0 0 100 220" aria-hidden="true"><path d="M20 70 L80 70 L66 10 L34 10Z" fill="#6f9fd8"/><path d="M50 70 V200"/><path d="M22 206 H78" /></svg>
+      <svg class="obj o-plant" data-x="0.55" viewBox="0 0 120 170" aria-hidden="true"><path d="M60 100 C30 80 20 40 40 20 C56 40 62 70 60 100 C70 60 90 40 108 40 C104 76 84 94 60 100" fill="#7bbf6a"/><path d="M30 100 H90 L82 160 H38Z" fill="#d9a46c"/></svg>
+      <svg class="obj o-mug" data-x="0.72" viewBox="0 0 100 100" aria-hidden="true"><path d="M18 30 H70 V82 C70 90 64 94 56 94 H32 C24 94 18 90 18 82Z" fill="#ef8c6b"/><path d="M70 42 C90 42 90 72 70 72"/><path d="M34 20 C30 12 38 8 34 2 M52 20 C48 12 56 8 52 2"/></svg>
+      <svg class="obj o-books" data-x="0.86" viewBox="0 0 120 110" aria-hidden="true"><rect x="10" y="70" width="100" height="26" rx="3" fill="#6f9fd8"/><rect x="18" y="44" width="86" height="26" rx="3" fill="#f6c45a"/><rect x="14" y="18" width="92" height="26" rx="3" fill="#8cc17a"/></svg>
+      <img class="z-cat z-run" src="assets/img/pose-run.webp" alt="Catus running zoomies" loading="lazy" width="889" height="549">
+      <img class="z-cat z-jump" src="assets/img/pose-jump.webp" alt="" aria-hidden="true" loading="lazy" width="720" height="617">
+      <img class="z-flop" src="assets/img/pose-back.webp" alt="Catus flopped on its back after the zoomies" loading="lazy" width="842" height="518">
+      <div class="dust" aria-hidden="true"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOKENOMICS -->
+<section id="tokenomics" class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="outline-word" aria-hidden="true">NUMBERS</span>
+      <h2 class="sec-title words">Tokenomics (the cat can't count yet)</h2>
+    </div>
+    <div class="pills">
+      <div class="pill sk c-blue reveal"><span>Ticker</span><b>$Catus</b></div>
+      <div class="pill sk c-green reveal"><span>Chain</span><b>Solana</b></div>
+      <div class="pill sk c-yellow reveal"><span>Total supply</span><b>TBA</b></div>
+      <div class="pill sk c-coral reveal"><span>Tax</span><b>TBA</b></div>
+      <div class="pill sk c-paper reveal"><span>Liquidity</span><b>TBA</b></div>
+      <div class="pill sk c-blue reveal"><span>Launch</span><b>pump.fun</b></div>
+    </div>
+    <p class="fine">Final numbers drop with the CA. We refuse to make them up, the cat already makes enough things up.</p>
+  </div>
+</section>
+
+<!-- HOW TO BUY -->
+<section id="how" class="section how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="outline-word" aria-hidden="true">HOW</span>
+      <h2 class="sec-title words">How to buy $Catus on Solana</h2>
+    </div>
+    <ol class="steps">
+      <li class="step sk c-paper reveal"><span class="num">1</span>
+        <svg class="doodle-ico" viewBox="0 0 64 64"><path d="M8 20 H50 C54 20 56 22 56 26 V50 C56 54 54 56 50 56 H12 C9 56 8 54 8 52Z"/><path d="M8 20 L44 8 L48 20"/><circle cx="46" cy="38" r="4"/></svg>
+        <h3>Get a wallet</h3><p>Download Phantom (or Solflare). Write the seed phrase on paper. Tell nobody, not even the cat.</p></li>
+      <li class="step sk c-paper reveal"><span class="num">2</span>
+        <svg class="doodle-ico" viewBox="0 0 64 64"><circle cx="32" cy="32" r="22"/><path d="M22 24 H42 M22 32 H42 M22 40 H42"/></svg>
+        <h3>Load up SOL</h3><p>Buy SOL on an exchange and send it to your wallet address. Keep a little extra for fees.</p></li>
+      <li class="step sk c-paper reveal"><span class="num">3</span>
+        <svg class="doodle-ico" viewBox="0 0 64 64"><rect x="14" y="10" width="30" height="38" rx="4"/><path d="M24 20 H50 V54 H24Z"/><path d="M30 30h14M30 38h10"/></svg>
+        <h3>Open pump.fun swap</h3><p>Hit <a data-link="buy" href="#" target="_blank" rel="noopener">Buy Now</a> and paste the $Catus CA from this page. Double-check it.</p></li>
+      <li class="step sk c-paper reveal"><span class="num">4</span>
+        <svg class="doodle-ico" viewBox="0 0 64 64"><path d="M10 24 H46 L38 16 M54 40 H18 L26 48"/></svg>
+        <h3>Swap and join the chaos</h3><p>Swap SOL for $Catus. Congrats, you now stare blankly at charts professionally.</p></li>
+    </ol>
+    <div class="how-cta"><a class="btn btn-coral btn-lg" data-link="buy" href="#" target="_blank" rel="noopener" data-cursor="buy">Buy Now</a><button class="btn btn-paper" data-copy-ca data-cursor="copy">Copy CA</button></div>
+  </div>
+</section>
+
+<!-- CHART -->
+<section id="chart" class="section">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="outline-word" aria-hidden="true">CHART</span>
+      <h2 class="sec-title words">The live chart</h2>
+    </div>
+    <div class="chart-box sk">
+      <div id="chartFrame" class="chart-frame"></div>
+      <div id="chartSoon" class="chart-soon">
+        <svg viewBox="0 0 400 160" class="soon-doodle" aria-hidden="true"><path d="M10 140 L70 110 L120 124 L180 70 L230 90 L300 30 L340 50 L390 12"/><path d="M370 10 L392 10 L390 32"/></svg>
+        <img src="assets/img/pose-sit-sm.webp" alt="Catus waiting for the chart" loading="lazy" width="313" height="360">
+        <p class="soon-title">Chart drops at launch</p>
+        <p>The cat is staring at an empty chart. Very on brand. It goes live here the second the CA is set.</p>
+        <a class="btn btn-yellow" data-link="chart" href="#" target="_blank" rel="noopener" data-cursor="chart">Open DexScreener</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="join" id="join">
+  <img class="join-bg" src="assets/img/banner.webp" alt="" loading="lazy" width="2448" height="816">
+  <div class="join-inner">
+    <h2 class="join-title">JOIN THE<br>CHAOS</h2>
+    <p>Telegram: soon. X: right now. Bring memes.</p>
+    <div class="join-btns">
+      <a class="round-x" data-link="x" href="#" target="_blank" rel="noopener" aria-label="Follow Catus on X" data-cursor="follow">
+        <!-- SWAP: replace with <img src="assets/img/x.png" alt="X"> when x.png arrives -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.8 3h3.1l-6.8 7.8 8 10.2h-6.3l-4.9-6.4L5.3 21H2.2l7.3-8.3L1.8 3h6.4l4.4 5.9L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.5l11.2 14.5z"/></svg>
+      </a>
+      <a class="btn btn-paper tg-btn" data-link="tg" href="#" aria-disabled="true">Telegram <small>soon</small></a>
+      <a class="btn btn-coral btn-lg" data-link="buy" href="#" target="_blank" rel="noopener" data-cursor="buy">Buy $Catus</a>
+    </div>
+  </div>
+  <img class="join-cat" src="assets/img/pose-jump.webp" alt="Catus jumping with excitement" loading="lazy" width="720" height="617">
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-in">
+    <div class="foot-brand"><img src="assets/img/catus-sm.webp" alt="Catus" width="72" height="51" loading="lazy"><b>$Catus</b>
+      <span class="googly gf" aria-hidden="true"><i></i></span><span class="googly gf" aria-hidden="true"><i></i></span>
+    </div>
+    <p class="disclaimer">$Catus is a meme coin with no intrinsic value or expectation of financial return. It is for entertainment only. Nothing on this site is financial advice. Crypto is risky, do your own research and never spend more than you can afford to lose.</p>
+    <p class="copy">&copy; 2026 Catus. Drawn with zero thoughts.</p>
+  </div>
+</footer>
+
+<!-- MOBILE CA BAR -->
+<div class="mbar" id="mbar">
+  <button class="mbar-ca" data-copy-ca aria-label="Copy contract address"><small>CA</small><span data-ca-short>TBA</span></button>
+  <a class="btn btn-sm btn-yellow" data-link="chart" href="#" target="_blank" rel="noopener">Chart</a>
+  <a class="btn btn-sm btn-coral" data-link="buy" href="#" target="_blank" rel="noopener">Buy</a>
+</div>
+
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>
